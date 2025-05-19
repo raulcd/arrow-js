@@ -30,7 +30,7 @@ build_dir=${2}
 # and build in the build directory.
 rm -rf ${build_dir}/js
 mkdir -p ${build_dir}
-# To be uncommented when https://github.com/apache/arrow-js/issues/2
+
 cp -aL ${source_dir}/LICENSE.txt ${build_dir}/
 cp -aL ${source_dir}/NOTICE.txt ${build_dir}/
 cp -aL ${source_dir} ${build_dir}/js
