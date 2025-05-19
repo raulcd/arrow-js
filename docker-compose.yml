@@ -51,4 +51,4 @@ services:
     command: &js-command >
       /bin/bash -c "
         /arrow-js/ci/scripts/js_build.sh /arrow-js /build &&
-        /arrow-js/ci/scripts/js_test.sh /arrow-js /build"
+        /arrow-js/ci/scripts/js_test.sh /build"

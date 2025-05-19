@@ -34,6 +34,9 @@ concurrency:
 permissions:
   contents: read
 
+env:
+  DOCKER_VOLUME_PREFIX: ".docker/"
+
 jobs:
 
   docker:
@@ -76,10 +79,10 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Build
         shell: bash
-        run: ci/scripts/js_build.sh $(pwd) build
+        run: ci/scripts/js_build.sh $(pwd) /tmp/build
       - name: Test
         shell: bash
-        run: ci/scripts/js_test.sh $(pwd) build
+        run: ci/scripts/js_test.sh /tmp/build
 
   windows:
     name: AMD64 Windows NodeJS ${{ matrix.node }}
@@ -107,7 +110,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Build
         shell: bash
-        run: ci/scripts/js_build.sh $(pwd) build
+        run: ci/scripts/js_build.sh $(pwd) /tmp/build
       - name: Test
         shell: bash
-        run: ci/scripts/js_test.sh $(pwd) build
+        run: ci/scripts/js_test.sh /tmp/build

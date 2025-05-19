@@ -19,8 +19,7 @@
 
 set -ex
 
-source_dir=${1}
-build_dir=${2}/js
+build_dir=${1}/js
 
 pushd ${build_dir}
 
