@@ -67,8 +67,8 @@ jobs:
       - name: Jest Cache
         uses: actions/cache@v4
         with:
-          path: js/.jest-cache
-          key: js-jest-cache-${{ runner.os }}-${{ hashFiles('js/src/**/*.ts', 'js/test/**/*.ts', 'js/yarn.lock') }}
+          path: .jest-cache
+          key: js-jest-cache-${{ runner.os }}-${{ hashFiles('src/**/*.ts', 'test/**/*.ts', 'yarn.lock') }}
           restore-keys: js-jest-cache-${{ runner.os }}-
       - name: Install NodeJS
         uses: actions/setup-node@v4
@@ -98,8 +98,8 @@ jobs:
       - name: Jest Cache
         uses: actions/cache@v4
         with:
-          path: js/.jest-cache
-          key: js-jest-cache-${{ runner.os }}-${{ hashFiles('js/src/**/*.ts', 'js/test/**/*.ts', 'js/yarn.lock') }}
+          path: .jest-cache
+          key: js-jest-cache-${{ runner.os }}-${{ hashFiles('src/**/*.ts', 'test/**/*.ts', 'yarn.lock') }}
           restore-keys: js-jest-cache-${{ runner.os }}-
       - name: Install NodeJS
         uses: actions/setup-node@v4
