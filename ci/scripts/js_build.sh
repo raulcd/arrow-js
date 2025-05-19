@@ -36,7 +36,10 @@ cp -aL ${source_dir}/NOTICE.txt ${build_dir}/
 cp -aL ${source_dir} ${build_dir}/js
 pushd ${build_dir}/js
 
-yarn --immutable
+# Clear yarn cache first
+yarn cache clean
+
+yarn install --check-files --immutable
 yarn lint:ci
 yarn build
 
