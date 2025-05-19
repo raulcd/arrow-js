@@ -22,8 +22,8 @@
 # defaults are set in .env file.
 #
 # Example:
-# $ ARCH=arm64v8 docker compose build java
-# $ ARCH=arm64v8 docker compose run java
+# $ ARCH=amd64 docker compose build debian-js
+# $ ARCH=amd64 docker compose run debian-js
 
 volumes:
   debian-ccache:

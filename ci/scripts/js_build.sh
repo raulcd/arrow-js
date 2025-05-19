@@ -38,11 +38,6 @@ pushd ${build_dir}/js
 
 yarn --immutable
 
-if ! yarn list --pattern eslint-plugin-unicorn | grep -q eslint-plugin-unicorn; then
-  echo "eslint-plugin-unicorn not installed properly, trying explicit installation"
-  yarn add --dev eslint-plugin-unicorn
-fi
-
 yarn lint:ci
 yarn build
 
