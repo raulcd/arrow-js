@@ -36,10 +36,13 @@ cp -aL ${source_dir}/NOTICE.txt ${build_dir}/
 cp -aL ${source_dir} ${build_dir}/js
 pushd ${build_dir}/js
 
-# Clear yarn cache first
-yarn cache clean
+yarn --immutable
 
-yarn install --check-files --immutable
+if ! yarn list --pattern eslint-plugin-unicorn | grep -q eslint-plugin-unicorn; then
+  echo "eslint-plugin-unicorn not installed properly, trying explicit installation"
+  yarn add --dev eslint-plugin-unicorn
+fi
+
 yarn lint:ci
 yarn build
 
