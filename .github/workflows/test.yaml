@@ -43,7 +43,7 @@ jobs:
     name: AMD64 Debian 12 NodeJS 18
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.pull_request.title, 'WIP') }}
-    timeout-minutes: 60
+    timeout-minutes: 45
     steps:
       - name: Checkout Arrow JS
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
